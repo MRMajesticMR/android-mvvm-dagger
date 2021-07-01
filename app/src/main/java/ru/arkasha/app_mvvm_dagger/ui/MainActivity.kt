@@ -1,7 +1,8 @@
-package ru.arkasha.app_mvvm_dagger
+package ru.arkasha.app_mvvm_dagger.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ru.arkasha.app_mvvm_dagger.R
 
 class MainActivity : AppCompatActivity() {
 
