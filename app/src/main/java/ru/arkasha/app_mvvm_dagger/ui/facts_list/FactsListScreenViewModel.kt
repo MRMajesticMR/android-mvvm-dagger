@@ -1,68 +1,25 @@
 package ru.arkasha.app_mvvm_dagger.ui.facts_list
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.orhanobut.logger.Logger
 
 class FactsListScreenViewModel : ViewModel() {
 
-    var word = ""
+    private val model = DataModel(
+        text = "Start text"
+    )
 
-    var score = 0
-
-    private lateinit var wordList: MutableList<String>
+    val uiTextLiveData = MutableLiveData<String>()
 
     init {
         Logger.d("FactsListScreenViewModel created!")
 
-        resetList()
-        nextWord()
+        getText()
     }
 
-    /**
-     * Moves to the next word in the list
-     */
-    private fun nextWord() {
-        if (wordList.isNotEmpty()) {
-            //Select and remove a word from the list
-            word = wordList.removeAt(0)
-        }
-    }
-    /** Methods for buttons presses **/
-    fun onSkip() {
-        score--
-        nextWord()
-    }
-
-    fun onCorrect() {
-        score++
-        nextWord()
-    }
-
-    private fun resetList() {
-        wordList = mutableListOf(
-            "queen",
-            "hospital",
-            "basketball",
-            "cat",
-            "change",
-            "snail",
-            "soup",
-            "calendar",
-            "sad",
-            "desk",
-            "guitar",
-            "home",
-            "railway",
-            "zebra",
-            "jelly",
-            "car",
-            "crow",
-            "trade",
-            "bag",
-            "roll",
-            "bubble"
-        )
-        wordList.shuffle()
+    fun getText() {
+        uiTextLiveData.postValue(model.text)
     }
 
     override fun onCleared() {

@@ -1,29 +1,22 @@
 package ru.arkasha.app_mvvm_dagger.ui.facts_list
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.orhanobut.logger.Logger
+import androidx.fragment.app.activityViewModels
 import ru.arkasha.app_mvvm_dagger.R
 
-class FactsListScreen : Fragment() {
+class FactsListScreen : Fragment(R.layout.f_facts_list) {
 
-    private lateinit var viewModel: FactsListScreenViewModel
+    private val viewModel: FactsListScreenViewModel by activityViewModels()
 
-    @SuppressLint("InflateParams")
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.f_facts_list, null)
+    private val tvText by lazy { view?.findViewById<TextView>(R.id.tvText) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Logger.d("Called FactsListScreenViewModel.get")
-        viewModel = ViewModelProvider(this).get(FactsListScreenViewModel::class.java)
+        viewModel.uiTextLiveData.observe(viewLifecycleOwner, { updatedText ->
+            tvText?.text = updatedText
+        })
     }
 
 }
