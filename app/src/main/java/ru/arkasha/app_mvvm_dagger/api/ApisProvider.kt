@@ -1,11 +1,9 @@
 package ru.arkasha.app_mvvm_dagger.api
 
 import com.google.gson.GsonBuilder
-import io.reactivex.schedulers.Schedulers
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.arkasha.app_mvvm_dagger.api.cats.CatsApi
 
@@ -34,10 +32,6 @@ class ApisProviderImpl(
                         }
                         .create()
                 )
-            )
-            .addCallAdapterFactory(
-                RxJava2CallAdapterFactory
-                    .createWithScheduler(Schedulers.newThread())
             )
             .client(
                 OkHttpClient.Builder()
