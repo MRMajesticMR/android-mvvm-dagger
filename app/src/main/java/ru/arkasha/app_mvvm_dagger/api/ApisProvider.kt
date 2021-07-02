@@ -14,7 +14,7 @@ interface ApisProvider {
 }
 
 class ApisProviderImpl(
-    private val catsBaseUrl: String, //https://cat-fact.herokuapp.com/
+    private val catsBaseUrl: String = "https://cat-fact.herokuapp.com/",
     private val catsApiInterceptors: List<Interceptor> = emptyList(),
     private val catsApiCustomTypeAdapters: Map<Class<*>, Any> = emptyMap()
 ) : ApisProvider {
