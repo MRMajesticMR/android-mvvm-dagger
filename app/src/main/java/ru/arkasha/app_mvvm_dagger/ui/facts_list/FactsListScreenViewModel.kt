@@ -17,13 +17,8 @@ import ru.arkasha.app_mvvm_dagger.data.facts.FactsRepositoryImpl
 
 class FactsListScreenViewModel : ViewModel() {
 
-    private val model = DataModel()
-
-    val uiTextLiveData = MutableLiveData<String>()
     val uiCatsFacts = MutableLiveData<List<CatFact>>()
-    val uiContentState = MutableLiveData<DataModel.ContentState>()
-
-    private val uiScope = viewModelScope
+    val uiContentState = MutableLiveData<ContentState>()
 
     private val factsRepository: FactsRepository = FactsRepositoryImpl(
         catsApi = ApisProviderImpl().catsApi,
@@ -33,24 +28,19 @@ class FactsListScreenViewModel : ViewModel() {
     init {
         Logger.d("FactsListScreenViewModel created!")
 
-        getText()
         loadCatFacts()
     }
 
-    fun getText() {
-        uiTextLiveData.postValue(model.text)
-    }
-
     fun loadCatFacts() {
-        uiScope.launch {
-            uiContentState.value = DataModel.ContentState.LOADING
+        viewModelScope.launch {
+            uiContentState.value = ContentState.LOADING
 
             try {
                 uiCatsFacts.value  = factsRepository.getFacts()
 
-                uiContentState.value = DataModel.ContentState.CONTENT
+                uiContentState.value = ContentState.CONTENT
             } catch (e: Throwable) {
-                uiContentState.value = DataModel.ContentState.ERROR
+                uiContentState.value = ContentState.ERROR
             }
         }
     }

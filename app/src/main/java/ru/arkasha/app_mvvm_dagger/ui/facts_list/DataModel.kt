@@ -1,21 +1,11 @@
 package ru.arkasha.app_mvvm_dagger.ui.facts_list
 
-import ru.arkasha.app_mvvm_dagger.data.facts.CatFact
+enum class ContentState {
 
-data class DataModel(
-    val text: String = "",
-    val facts: List<CatFact> = emptyList(),
-    val contentState: ContentState = ContentState.LOADING
-) {
+    LOADING,
 
-    enum class ContentState {
+    CONTENT,
 
-        LOADING,
-
-        CONTENT,
-
-        ERROR
-
-    }
+    ERROR
 
 }
