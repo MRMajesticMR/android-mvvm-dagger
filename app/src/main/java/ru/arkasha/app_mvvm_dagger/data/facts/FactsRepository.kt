@@ -16,7 +16,18 @@ class FactsRepositoryImpl(
     private val catFactFromCatFactCatsApiObjectMapper: CatFactFromCatFactCatsApiObjectMapper
 ) : FactsRepository {
 
+    private val mCache = mutableListOf<CatFact>()
+
     override suspend fun getFacts(): List<CatFact> =
-        catsApi.getFacts().map { catFactFromCatFactCatsApiObjectMapper.map(it) }
+        if (mCache.isEmpty()) {
+            val results = catsApi.getFacts().map { catFactFromCatFactCatsApiObjectMapper.map(it) }
+
+            mCache.clear()
+            mCache.addAll(results)
+
+            results
+        } else {
+            mCache.toList()
+        }
 
 }
