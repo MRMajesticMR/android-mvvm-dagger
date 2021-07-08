@@ -3,6 +3,7 @@ package ru.arkasha.app_mvvm_dagger.ui.fact_details
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.navArgs
+import androidx.transition.TransitionInflater
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 import ru.arkasha.app_mvvm_dagger.R
@@ -21,9 +22,17 @@ class FactsDetailsScreen : ViewBindingSupportFragment<FFactDetailsBinding>(R.lay
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        sharedElementEnterTransition = TransitionInflater
+            .from(context)
+            .inflateTransition(android.R.transition.move)
+
+        postponeEnterTransition()
+
         viewModel.uiFact.observe(viewLifecycleOwner, { fact ->
             binding?.tvDate?.text = fact.creationDate
             binding?.tvText?.text = fact.title
+
+            startPostponedEnterTransition()
         })
     }
 

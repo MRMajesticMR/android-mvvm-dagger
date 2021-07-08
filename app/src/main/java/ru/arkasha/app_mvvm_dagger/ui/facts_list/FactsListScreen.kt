@@ -2,6 +2,7 @@ package ru.arkasha.app_mvvm_dagger.ui.facts_list
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.arkasha.app_mvvm_dagger.R
@@ -17,9 +18,8 @@ class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f
         FactsRecyclerViewAdapter().apply {
             onClicked = { view, model ->
                 findNavController().navigate(
-                    FactsListScreenDirections.actionFactsListScreenToFactsDetailsScreen(
-                        factId = model.id
-                    )
+                    FactsListScreenDirections.actionFactsListScreenToFactsDetailsScreen(model.id),
+                    FragmentNavigatorExtras(view to "rootView")
                 )
             }
         }

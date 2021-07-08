@@ -1,6 +1,7 @@
 package ru.arkasha.app_mvvm_dagger.ui.facts_list
 
 import android.view.View
+import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import ru.arkasha.app_mvvm_dagger.R
 import ru.arkasha.app_mvvm_dagger.base.recycler_view.SingleViewHolderRecyclerViewAdapter
@@ -18,6 +19,8 @@ class FactsRecyclerViewAdapter : SingleViewHolderRecyclerViewAdapter<CatFact>() 
     override fun bindModel(holder: ViewHolder, model: CatFact) {
         with(holder.itemView) {
             binding = ICatFactBinding.bind(this)
+
+            ViewCompat.setTransitionName(this, model.id)
 
             binding?.tvDate?.text = model.creationDate
             binding?.tvText?.text = model.title
