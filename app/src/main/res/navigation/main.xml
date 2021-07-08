@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    app:startDestination="@id/factsListScreen">
+
+    <fragment
+        android:id="@+id/factsListScreen"
+        android:name="ru.arkasha.app_mvvm_dagger.ui.facts_list.FactsListScreen"
+        android:label="FactsListScreen" />
+</navigation>
