@@ -2,7 +2,7 @@ package ru.arkasha.app_mvvm_dagger.ui.facts_list
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.viewModels
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.arkasha.app_mvvm_dagger.R
 import ru.arkasha.app_mvvm_dagger.base.fragments.ViewBindingSupportFragment
 import ru.arkasha.app_mvvm_dagger.base.recycler_view.tuneVertical
@@ -10,7 +10,7 @@ import ru.arkasha.app_mvvm_dagger.databinding.FFactsListBinding
 
 class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f_facts_list) {
 
-    private val viewModel: FactsListScreenViewModel by viewModels()
+    private val viewModel: FactsListScreenViewModel by viewModel()
 
     private val factsRecyclerViewAdapter = FactsRecyclerViewAdapter()
 
