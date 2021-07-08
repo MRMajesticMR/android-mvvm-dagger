@@ -7,6 +7,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import ru.arkasha.app_mvvm_dagger.api.apiModule
 import ru.arkasha.app_mvvm_dagger.data.dataModule
+import ru.arkasha.app_mvvm_dagger.ui.fact_details.factsDetailsUiModule
 import ru.arkasha.app_mvvm_dagger.ui.facts_list.factsListUiModule
 
 
@@ -30,7 +31,8 @@ class App : Application() {
                     apiModule,
                     dataModule,
 
-                    factsListUiModule
+                    factsListUiModule,
+                    factsDetailsUiModule
                 )
             )
 

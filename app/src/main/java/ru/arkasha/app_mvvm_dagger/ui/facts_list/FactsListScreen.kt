@@ -2,6 +2,7 @@ package ru.arkasha.app_mvvm_dagger.ui.facts_list
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.arkasha.app_mvvm_dagger.R
 import ru.arkasha.app_mvvm_dagger.base.fragments.ViewBindingSupportFragment
@@ -12,7 +13,17 @@ class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f
 
     private val viewModel: FactsListScreenViewModel by viewModel()
 
-    private val factsRecyclerViewAdapter = FactsRecyclerViewAdapter()
+    private val factsRecyclerViewAdapter by lazy {
+        FactsRecyclerViewAdapter().apply {
+            onClicked = { view, model ->
+                findNavController().navigate(
+                    FactsListScreenDirections.actionFactsListScreenToFactsDetailsScreen(
+                        factId = model.id
+                    )
+                )
+            }
+        }
+    }
 
     override fun bind(view: View): FFactsListBinding =
         FFactsListBinding.bind(view)
