@@ -4,17 +4,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import ru.arkasha.app_mvvm_dagger.api.ApisProviderImpl
 import ru.arkasha.app_mvvm_dagger.data.facts.CatFact
-import ru.arkasha.app_mvvm_dagger.data.facts.CatFactFromCatFactCatsApiObjectMapper
 import ru.arkasha.app_mvvm_dagger.data.facts.FactsRepository
-import ru.arkasha.app_mvvm_dagger.data.facts.FactsRepositoryImpl
 import javax.inject.Inject
 
-class FactsListScreenViewModel : ViewModel() {
-
-    @Inject
-    lateinit var factsRepository: FactsRepository
+class FactsListScreenViewModel @Inject constructor(
+    private val factsRepository: FactsRepository
+) : ViewModel() {
 
     val uiCatsFacts = MutableLiveData<List<CatFact>>()
     val uiContentState = MutableLiveData<ContentState>()

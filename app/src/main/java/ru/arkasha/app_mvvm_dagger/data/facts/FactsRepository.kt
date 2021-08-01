@@ -1,6 +1,7 @@
 package ru.arkasha.app_mvvm_dagger.data.facts
 
 import ru.arkasha.app_mvvm_dagger.api.cats.CatsApi
+import javax.inject.Inject
 
 interface FactsRepository {
 
@@ -16,7 +17,7 @@ interface FactsRepository {
 
 }
 
-class FactsRepositoryImpl(
+class FactsRepositoryImpl @Inject constructor(
     private val catsApi: CatsApi,
     private val catFactFromCatFactCatsApiObjectMapper: CatFactFromCatFactCatsApiObjectMapper
 ) : FactsRepository {

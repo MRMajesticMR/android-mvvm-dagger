@@ -32,8 +32,6 @@ class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        appComponent.inject(viewModel)
-
         binding?.rvFacts?.tuneVertical(factsRecyclerViewAdapter)
 
         viewModel.uiCatsFacts.observe(viewLifecycleOwner, { facts ->

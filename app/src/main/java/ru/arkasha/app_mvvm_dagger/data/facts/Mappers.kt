@@ -1,8 +1,9 @@
 package ru.arkasha.app_mvvm_dagger.data.facts
 
 import ru.arkasha.app_mvvm_dagger.api.cats.objects.CatFactCatsApiObject
+import javax.inject.Inject
 
-class CatFactFromCatFactCatsApiObjectMapper {
+class CatFactFromCatFactCatsApiObjectMapper @Inject constructor() {
 
     fun map(id: String, from: CatFactCatsApiObject) =
         CatFact(
