@@ -9,10 +9,12 @@ import ru.arkasha.app_mvvm_dagger.data.facts.CatFact
 import ru.arkasha.app_mvvm_dagger.data.facts.CatFactFromCatFactCatsApiObjectMapper
 import ru.arkasha.app_mvvm_dagger.data.facts.FactsRepository
 import ru.arkasha.app_mvvm_dagger.data.facts.FactsRepositoryImpl
+import javax.inject.Inject
 
-class FactsListScreenViewModel(
-    private val factsRepository: FactsRepository
-) : ViewModel() {
+class FactsListScreenViewModel : ViewModel() {
+
+    @Inject
+    lateinit var factsRepository: FactsRepository
 
     val uiCatsFacts = MutableLiveData<List<CatFact>>()
     val uiContentState = MutableLiveData<ContentState>()

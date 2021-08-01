@@ -2,10 +2,9 @@ package ru.arkasha.app_mvvm_dagger.ui.fact_details
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.transition.TransitionInflater
-import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.parameter.parametersOf
 import ru.arkasha.app_mvvm_dagger.R
 import ru.arkasha.app_mvvm_dagger.base.fragments.ViewBindingSupportFragment
 import ru.arkasha.app_mvvm_dagger.databinding.FFactDetailsBinding
@@ -14,7 +13,7 @@ class FactsDetailsScreen : ViewBindingSupportFragment<FFactDetailsBinding>(R.lay
 
     private val args: FactsDetailsScreenArgs by navArgs()
 
-    private val viewModel: FactDetailsScreenViewModel by viewModel { parametersOf(args.factId) }
+    private val viewModel: FactDetailsScreenViewModel by viewModels()
 
     override fun bind(view: View): FFactDetailsBinding =
         FFactDetailsBinding.bind(view)

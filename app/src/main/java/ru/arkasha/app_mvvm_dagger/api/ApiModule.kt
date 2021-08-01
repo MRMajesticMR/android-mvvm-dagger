@@ -1,11 +1,20 @@
 package ru.arkasha.app_mvvm_dagger.api
 
+import dagger.Module
+import dagger.Provides
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.dsl.module
+import ru.arkasha.app_mvvm_dagger.api.cats.CatsApi
 
-val apiModule = module {
+@Module
+object ApiModule {
 
-    single<ApisProvider> {
+    @Provides
+    fun provideCatsApi(
+        apisProvider: ApisProvider
+    ): CatsApi = apisProvider.catsApi
+
+    @Provides
+    fun provideApisProvider(): ApisProvider =
         ApisProviderImpl(
             catsApiInterceptors = listOf(
                 HttpLoggingInterceptor().apply {
@@ -13,10 +22,5 @@ val apiModule = module {
                 }
             )
         )
-    }
-
-    single {
-        get<ApisProvider>().catsApi
-    }
 
 }
