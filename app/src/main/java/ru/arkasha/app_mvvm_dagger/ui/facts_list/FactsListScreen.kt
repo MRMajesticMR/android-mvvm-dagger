@@ -10,10 +10,12 @@ import ru.arkasha.app_mvvm_dagger.appComponent
 import ru.arkasha.app_mvvm_dagger.base.fragments.ViewBindingSupportFragment
 import ru.arkasha.app_mvvm_dagger.base.recycler_view.tuneVertical
 import ru.arkasha.app_mvvm_dagger.databinding.FFactsListBinding
+import javax.inject.Inject
 
 class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f_facts_list) {
 
-    private val viewModel: FactsListScreenViewModel by viewModels()
+    @Inject
+    lateinit var viewModel: FactsListScreenViewModel
 
     private val factsRecyclerViewAdapter by lazy {
         FactsRecyclerViewAdapter().apply {
@@ -31,6 +33,8 @@ class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        appComponent.inject(this)
 
         binding?.rvFacts?.tuneVertical(factsRecyclerViewAdapter)
 
