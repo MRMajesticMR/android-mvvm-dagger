@@ -17,7 +17,7 @@ interface FactsRepository {
 
 }
 
-class FactsRepositoryImpl @Inject constructor(
+class FactsRepositoryImpl (
     private val catsApi: CatsApi,
     private val catFactFromCatFactCatsApiObjectMapper: CatFactFromCatFactCatsApiObjectMapper
 ) : FactsRepository {
