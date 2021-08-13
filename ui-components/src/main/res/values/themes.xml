@@ -18,13 +18,13 @@
         <item name="windowNoTitle">true</item>
 
         <!-- Customize your theme here. -->
-        <item name="screenBackgroundColor">@color/white</item>
-        <item name="baseTextColor">@color/black</item>
+        <item name="app_screenBackgroundColor">@color/white</item>
+        <item name="app_baseTextColor">@color/black</item>
 
     </style>
 
     <style name="DefaultTextViewStyle" parent="android:Widget.TextView">
-        <item name="android:textColor">?baseTextColor</item>
+        <item name="android:textColor">?app_baseTextColor</item>
         <item name="android:textSize">16sp</item>
     </style>
 

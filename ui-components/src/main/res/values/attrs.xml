@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Background color of all screens -->
-    <attr name="screenBackgroundColor" format="reference|color" />
+    <attr name="app_screenBackgroundColor" format="reference|color" />
 
     <!-- Color of base text -->
-    <attr name="baseTextColor" format="reference|color" />
+    <attr name="app_baseTextColor" format="reference|color" />
 </resources>
