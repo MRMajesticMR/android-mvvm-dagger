@@ -1,14 +1,11 @@
-package ru.arkasha.app_mvvm_dagger.base.fragments
+package ru.arkasha.view_binding_utils.base
 
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
-import ru.arkasha.app_mvvm_dagger.ui.facts_list.FactsListScreenViewModel
 
 abstract class ViewBindingSupportFragment<B: ViewBinding>(@LayoutRes layoutId: Int): Fragment(layoutId) {
 
