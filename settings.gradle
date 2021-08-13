@@ -2,3 +2,4 @@ rootProject.name = "app-mvvm-dagger"
 include ':app'
 include ':view-binding-utils'
 include ':cats-api'
+include ':ui-components'
