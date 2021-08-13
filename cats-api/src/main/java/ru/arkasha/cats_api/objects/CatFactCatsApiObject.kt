@@ -1,4 +1,4 @@
-package ru.arkasha.app_mvvm_dagger.api.cats.objects
+package ru.arkasha.cats_api.objects
 
 class CatFactCatsApiObject(
     val status: Status,

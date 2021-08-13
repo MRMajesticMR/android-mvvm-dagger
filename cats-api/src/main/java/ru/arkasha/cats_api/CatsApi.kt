@@ -1,7 +1,7 @@
-package ru.arkasha.app_mvvm_dagger.api.cats
+package ru.arkasha.cats_api
 
 import retrofit2.http.GET
-import ru.arkasha.app_mvvm_dagger.api.cats.objects.CatFactCatsApiObject
+import ru.arkasha.cats_api.objects.CatFactCatsApiObject
 
 interface CatsApi {
 

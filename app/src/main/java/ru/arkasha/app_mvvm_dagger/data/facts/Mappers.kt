@@ -1,6 +1,6 @@
 package ru.arkasha.app_mvvm_dagger.data.facts
 
-import ru.arkasha.app_mvvm_dagger.api.cats.objects.CatFactCatsApiObject
+import ru.arkasha.cats_api.objects.CatFactCatsApiObject
 import javax.inject.Inject
 
 class CatFactFromCatFactCatsApiObjectMapper @Inject constructor() {
