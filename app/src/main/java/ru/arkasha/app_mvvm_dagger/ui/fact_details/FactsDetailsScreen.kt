@@ -13,7 +13,7 @@ class FactsDetailsScreen : ViewBindingSupportFragment<FFactDetailsBinding>(R.lay
 
     private val args: FactsDetailsScreenArgs by navArgs()
 
-    private val viewModel: FactDetailsScreenViewModel by viewModels()
+    private val viewModel: ViewModel by viewModels()
 
     override fun bind(view: View): FFactDetailsBinding =
         FFactDetailsBinding.bind(view)

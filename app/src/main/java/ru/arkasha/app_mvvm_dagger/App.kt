@@ -25,6 +25,7 @@ val Fragment.appComponent: AppComponent
     get() = context?.appComponent
         ?: throw IllegalStateException("Try to get AppComponent when fragment detached: ${javaClass.canonicalName}")
 
+
 val Context.appComponent: AppComponent
     get() = when (this) {
         is App -> appComponent

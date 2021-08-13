@@ -8,7 +8,7 @@ import ru.arkasha.app_mvvm_dagger.data.facts.CatFact
 import ru.arkasha.app_mvvm_dagger.data.facts.FactsRepository
 import javax.inject.Inject
 
-class FactsListScreenViewModel @Inject constructor(
+class ViewModel @Inject constructor(
     private val factsRepository: FactsRepository
 ) : ViewModel() {
 

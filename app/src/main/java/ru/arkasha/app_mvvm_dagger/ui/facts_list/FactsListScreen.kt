@@ -14,7 +14,7 @@ import javax.inject.Inject
 class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f_facts_list) {
 
     @Inject
-    lateinit var viewModel: FactsListScreenViewModel
+    lateinit var viewModel: ViewModel
 
     private val factsRecyclerViewAdapter by lazy {
         FactsRecyclerViewAdapter().apply {

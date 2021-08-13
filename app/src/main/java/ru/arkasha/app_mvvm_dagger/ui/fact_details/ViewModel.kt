@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
 import ru.arkasha.app_mvvm_dagger.data.facts.CatFact
 import ru.arkasha.app_mvvm_dagger.data.facts.FactsRepository
 
-class FactDetailsScreenViewModel(
+class ViewModel(
     private val factId: String,
     private val factsRepository: FactsRepository
 ) : ViewModel() {
