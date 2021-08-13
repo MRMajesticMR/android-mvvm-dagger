@@ -14,6 +14,8 @@
         <!-- Default Text View -->
         <item name="android:textViewStyle">@style/DefaultTextViewStyle</item>
 
+        <item name="windowNoTitle">true</item>
+
         <!-- Customize your theme here. -->
         <item name="screenBackgroundColor">@color/white</item>
         <item name="baseTextColor">@color/black</item>
