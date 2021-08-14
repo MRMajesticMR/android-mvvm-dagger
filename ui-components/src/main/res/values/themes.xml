@@ -9,6 +9,9 @@
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Customize your theme here. -->
+
         <!-- Default Text View -->
         <item name="android:textViewStyle">@style/DefaultTextViewStyle</item>
 
@@ -17,15 +20,24 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="windowNoTitle">true</item>
 
-        <!-- Customize your theme here. -->
-        <item name="app_screenBackgroundColor">@color/white</item>
-        <item name="app_baseTextColor">@color/black</item>
+        <!-- App Texts Colors -->
+        <item name="app_text_color_regular">@color/black</item>
+
+        <!-- App Default Fonts -->
+        <item name="app_font_regular">@font/poppins_regular</item>
+        <item name="app_font_bold">@font/poppins_bold</item>
+        <item name="app_font_light">@font/poppins_light</item>
+        <item name="app_font_medium">@font/poppins_medium</item>
+        <item name="app_font_thin">@font/poppins_thin</item>
+
+        <item name="app_screen_background_color">@color/white</item>
 
     </style>
 
     <style name="DefaultTextViewStyle" parent="android:Widget.TextView">
-        <item name="android:textColor">?app_baseTextColor</item>
+        <item name="android:textColor">?attr/app_text_color_regular</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">?app_font_regular</item>
     </style>
 
 </resources>

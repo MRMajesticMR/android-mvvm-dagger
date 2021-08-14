@@ -4,7 +4,7 @@
     android:id="@+id/vgRootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?app_screenBackgroundColor"
+    android:background="?attr/app_screen_background_color"
     tools:context=".ui.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView

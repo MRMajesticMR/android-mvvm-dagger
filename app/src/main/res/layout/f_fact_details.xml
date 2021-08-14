@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?app_screenBackgroundColor"
+    android:background="?attr/app_screen_background_color"
     android:orientation="vertical"
     android:transitionName="rootView"
     tools:context=".ui.MainActivity">
