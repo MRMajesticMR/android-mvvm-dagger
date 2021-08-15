@@ -10,14 +10,12 @@
 
     <TextView
         android:id="@+id/tvDate"
+        style="@style/TextView.Header1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="24dp"
         android:layout_marginTop="24dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
         tools:text="10.12.1990" />
 
     <TextView
@@ -26,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginHorizontal="16dp"
-        android:textSize="16sp"
         tools:text="Loading..." />
 
 </LinearLayout>

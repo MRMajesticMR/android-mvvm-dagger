@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DefaultTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">?attr/app_text_color_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">?app_font_regular</item>
+    </style>
+
+    <style name="TextView.Header1" parent="DefaultTextViewStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">?app_font_bold</item>
+    </style>
+
+</resources>

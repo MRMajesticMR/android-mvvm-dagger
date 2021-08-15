@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.Base">
+        <item name="app_screen_background_color">@color/white</item>
+
+        <!-- App Texts Colors -->
+        <item name="app_text_color_regular">@color/black</item>
+    </style>
+
+</resources>
