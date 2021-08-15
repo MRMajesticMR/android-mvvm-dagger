@@ -1,4 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.Base">
+        <item name="app_screen_background_color">@color/white</item>
+
+        <!-- App Texts Colors -->
+        <item name="app_text_color_regular">@color/black</item>
+    </style>
+
     <!-- Base application theme. -->
     <style name="Theme.Base" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
@@ -20,17 +28,12 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="windowNoTitle">true</item>
 
-        <!-- App Texts Colors -->
-        <item name="app_text_color_regular">@color/black</item>
-
         <!-- App Default Fonts -->
         <item name="app_font_regular">@font/poppins_regular</item>
         <item name="app_font_bold">@font/poppins_bold</item>
         <item name="app_font_light">@font/poppins_light</item>
         <item name="app_font_medium">@font/poppins_medium</item>
         <item name="app_font_thin">@font/poppins_thin</item>
-
-        <item name="app_screen_background_color">@color/white</item>
 
     </style>
 
