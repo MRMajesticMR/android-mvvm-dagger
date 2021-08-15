@@ -74,7 +74,6 @@ class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.stateCatsFacts.collect { facts ->
                     factsRecyclerViewAdapter.setData(facts)
-
                 }
             }
         }
