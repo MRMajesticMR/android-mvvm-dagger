@@ -10,6 +10,7 @@
       <map>
         <entry key="app/src/main/res/layout/f_fact_details.xml" value="0.35" />
         <entry key="app/src/main/res/layout/f_facts_list.xml" value="0.35" />
+        <entry key="app/src/main/res/layout/i_cat_fact.xml" value="0.35" />
       </map>
     </option>
   </component>

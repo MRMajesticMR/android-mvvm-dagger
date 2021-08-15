@@ -2,6 +2,8 @@ package ru.arkasha.app_mvvm_dagger.ui.facts_list
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -15,6 +17,8 @@ import ru.arkasha.app_mvvm_dagger.R
 import ru.arkasha.app_mvvm_dagger.appComponent
 import ru.arkasha.app_mvvm_dagger.base.recycler_view.tuneVertical
 import ru.arkasha.app_mvvm_dagger.databinding.FFactsListBinding
+import ru.arkasha.app_mvvm_dagger.utils.recycler_view.decorators.MarginBottomListDecoration
+import ru.arkasha.app_mvvm_dagger.utils.recycler_view.decorators.MarginTopListDecoration
 import ru.arkasha.view_binding_utils.base.ViewBindingSupportFragment
 import javax.inject.Inject
 
@@ -44,7 +48,27 @@ class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f
 
         appComponent.inject(this)
 
-        binding?.rvFacts?.tuneVertical(factsRecyclerViewAdapter)
+        binding?.rvFacts?.apply {
+            tuneVertical(factsRecyclerViewAdapter)
+
+            ViewCompat.setOnApplyWindowInsetsListener(this) { _, windowInsets ->
+                val systemBarsInsets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+                binding?.rvFacts?.addItemDecoration(
+                    MarginTopListDecoration(
+                        systemBarsInsets.top
+                    )
+                )
+
+                binding?.rvFacts?.addItemDecoration(
+                    MarginBottomListDecoration(
+                        systemBarsInsets.bottom
+                    )
+                )
+
+                WindowInsetsCompat.CONSUMED
+            }
+        }
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
