@@ -13,14 +13,13 @@
         <item name="colorOnSecondary">@color/black</item>
 
         <!-- Customize your theme here. -->
-
-        <!-- Default Text View -->
-        <item name="android:textViewStyle">@style/DefaultTextViewStyle</item>
-
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="windowNoTitle">true</item>
+
+        <!-- Default Text View -->
+        <item name="android:textViewStyle">@style/DefaultTextViewStyle</item>
 
         <!-- App Default Fonts -->
         <item name="app_font_regular">@font/poppins_regular</item>
