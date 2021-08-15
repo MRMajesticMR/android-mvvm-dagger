@@ -3,9 +3,14 @@ package ru.arkasha.app_mvvm_dagger.ui.facts_list
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import dagger.Lazy
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import ru.arkasha.app_mvvm_dagger.R
 import ru.arkasha.app_mvvm_dagger.appComponent
 import ru.arkasha.app_mvvm_dagger.base.recycler_view.tuneVertical
@@ -41,33 +46,39 @@ class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f
 
         binding?.rvFacts?.tuneVertical(factsRecyclerViewAdapter)
 
-        viewModel.uiCatsFacts.observe(viewLifecycleOwner, { facts ->
-            factsRecyclerViewAdapter.setData(facts)
-        })
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.stateCatsFacts.collect { facts ->
+                    factsRecyclerViewAdapter.setData(facts)
 
-        viewModel.uiContentState.observe(viewLifecycleOwner, { state ->
-            when (state) {
-                ContentState.LOADING -> {
-                    binding?.tvLoading?.visibility = View.VISIBLE
-                    binding?.rvFacts?.visibility = View.GONE
-                    binding?.tvError?.visibility = View.GONE
                 }
-
-                ContentState.CONTENT -> {
-                    binding?.tvLoading?.visibility = View.GONE
-                    binding?.rvFacts?.visibility = View.VISIBLE
-                    binding?.tvError?.visibility = View.GONE
-                }
-
-                ContentState.ERROR -> {
-                    binding?.tvLoading?.visibility = View.GONE
-                    binding?.rvFacts?.visibility = View.GONE
-                    binding?.tvError?.visibility = View.VISIBLE
-                }
-
-                else -> throw IllegalStateException("Illegal state: $state")
             }
-        })
-    }
+        }
 
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.stateContentState.collect { state ->
+                    when (state) {
+                        ContentState.LOADING -> {
+                            binding?.tvLoading?.visibility = View.VISIBLE
+                            binding?.rvFacts?.visibility = View.GONE
+                            binding?.tvError?.visibility = View.GONE
+                        }
+
+                        ContentState.CONTENT -> {
+                            binding?.tvLoading?.visibility = View.GONE
+                            binding?.rvFacts?.visibility = View.VISIBLE
+                            binding?.tvError?.visibility = View.GONE
+                        }
+
+                        ContentState.ERROR -> {
+                            binding?.tvLoading?.visibility = View.GONE
+                            binding?.rvFacts?.visibility = View.GONE
+                            binding?.tvError?.visibility = View.VISIBLE
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

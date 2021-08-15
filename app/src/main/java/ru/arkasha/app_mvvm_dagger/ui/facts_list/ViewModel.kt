@@ -1,9 +1,10 @@
 package ru.arkasha.app_mvvm_dagger.ui.facts_list
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import ru.arkasha.app_mvvm_dagger.data.facts.CatFact
 import ru.arkasha.app_mvvm_dagger.data.facts.FactsRepository
@@ -13,30 +14,33 @@ class ViewModel(
     private val factsRepository: FactsRepository
 ) : ViewModel() {
 
-    val uiCatsFacts = MutableLiveData<List<CatFact>>()
-    val uiContentState = MutableLiveData<ContentState>()
+    private val _stateCatsFacts = MutableStateFlow<List<CatFact>>(emptyList())
+    val stateCatsFacts: StateFlow<List<CatFact>> = _stateCatsFacts
+
+    private val _stateContentState = MutableStateFlow(ContentState.LOADING)
+    val stateContentState: StateFlow<ContentState> = _stateContentState
 
     init {
         loadCatFacts()
     }
 
-    fun loadCatFacts() {
+    private fun loadCatFacts() {
         viewModelScope.launch {
-            uiContentState.value = ContentState.LOADING
+            _stateContentState.value = ContentState.LOADING
 
             try {
-                uiCatsFacts.value = factsRepository.getFacts()
+                _stateCatsFacts.value = factsRepository.getFacts()
 
-                uiContentState.value = ContentState.CONTENT
+                _stateContentState.value = ContentState.CONTENT
             } catch (e: Throwable) {
-                uiContentState.value = ContentState.ERROR
+                _stateContentState.value = ContentState.ERROR
             }
         }
     }
 
     class Factory @Inject constructor(
         private val factsRepository: FactsRepository
-    ): ViewModelProvider.Factory {
+    ) : ViewModelProvider.Factory {
 
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel?> create(modelClass: Class<T>): T =
