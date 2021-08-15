@@ -1,8 +1,9 @@
 package ru.arkasha.app_mvvm_dagger.ui.fact_details
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import ru.arkasha.app_mvvm_dagger.data.facts.CatFact
 import ru.arkasha.app_mvvm_dagger.data.facts.FactsRepository
@@ -12,7 +13,8 @@ class ViewModel(
     private val factsRepository: FactsRepository
 ) : ViewModel() {
 
-    val uiFact = MutableLiveData<CatFact>()
+    private val _stateFact = MutableStateFlow<CatFact?>(null)
+    val stateFact: StateFlow<CatFact?> = _stateFact
 
     init {
         loadFact()
@@ -21,7 +23,7 @@ class ViewModel(
     private fun loadFact() {
         viewModelScope.launch {
             factsRepository.findFactInCache(factId)?.let {
-                uiFact.value = it
+                _stateFact.value = it
             }
         }
     }
