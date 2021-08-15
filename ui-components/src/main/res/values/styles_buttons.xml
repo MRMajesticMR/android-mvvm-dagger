@@ -7,11 +7,17 @@
         <item name="android:fontFamily">?app_font_medium</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">?attr/colorAccent</item>
+        <item name="backgroundTint">@null</item>
     </style>
 
     <style name="Button.Primary" parent="Button">
         <item name="android:textColor">@color/button_primary_text</item>
         <item name="android:background">@drawable/bg_button_primary</item>
+    </style>
+
+    <style name="Button.Outlined" parent="Button">
+        <item name="android:textColor">@color/button_outlined_text</item>
+        <item name="android:background">@drawable/bg_button_outlined</item>
     </style>
 
 </resources>

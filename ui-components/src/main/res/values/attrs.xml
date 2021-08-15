@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="app_default_ripple" format="reference|color" />
+
     <!-- Background color of all screens -->
     <attr name="app_screen_background_color" format="reference|color" />
 
     <!-- Text colors -->
     <attr name="app_text_color_regular" format="reference|color" />
-    <attr name="app_accent_button_text_color_regular_enabled" format="reference|color" />
-    <attr name="app_accent_button_text_color_regular_disabled" format="reference|color" />
+
+    <attr name="app_primary_button_text_color_regular_enabled" format="reference|color" />
+    <attr name="app_primary_button_text_color_regular_disabled" format="reference|color" />
+
+    <attr name="app_outlined_button_text_color_regular_enabled" format="reference|color" />
+    <attr name="app_outlined_button_text_color_regular_disabled" format="reference|color" />
 
     <!-- Fonts -->
     <attr name="app_font_regular" format="reference" />

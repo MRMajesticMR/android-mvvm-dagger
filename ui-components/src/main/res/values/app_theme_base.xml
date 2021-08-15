@@ -28,8 +28,14 @@
         <item name="app_font_medium">@font/poppins_medium</item>
         <item name="app_font_thin">@font/poppins_thin</item>
 
-        <item name="app_accent_button_text_color_regular_enabled">@color/white</item>
-        <item name="app_accent_button_text_color_regular_disabled">@color/white</item>
+        <item name="app_default_ripple">#1F000000</item>
+
+        <item name="app_primary_button_text_color_regular_enabled">@color/white</item>
+        <item name="app_primary_button_text_color_regular_disabled">@color/white</item>
+
+        <item name="app_outlined_button_text_color_regular_enabled">?attr/colorPrimary</item>
+        <item name="app_outlined_button_text_color_regular_disabled">@color/gray_500</item>
+
 
     </style>
 

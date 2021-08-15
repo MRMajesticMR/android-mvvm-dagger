@@ -76,6 +76,12 @@ class FactsDetailsScreen :
 
         binding?.bActionButton?.setOnClickListener {
             binding?.bActionButton?.isEnabled = false
+            binding?.bActionButtonOutlined?.isEnabled = true
+        }
+
+        binding?.bActionButtonOutlined?.setOnClickListener {
+            binding?.bActionButton?.isEnabled = true
+            binding?.bActionButtonOutlined?.isEnabled = false
         }
     }
 
