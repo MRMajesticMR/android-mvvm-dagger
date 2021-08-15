@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Button">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">?app_font_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?attr/colorAccent</item>
+    </style>
+
+    <style name="Button.Primary" parent="Button">
+        <item name="android:textColor">@color/button_primary_text</item>
+        <item name="android:background">@drawable/bg_button_primary</item>
+    </style>
+
+</resources>

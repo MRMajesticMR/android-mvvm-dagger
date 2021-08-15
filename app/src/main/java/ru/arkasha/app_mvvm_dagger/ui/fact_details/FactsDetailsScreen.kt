@@ -73,6 +73,10 @@ class FactsDetailsScreen :
                 }
             }
         }
+
+        binding?.bActionButton?.setOnClickListener {
+            binding?.bActionButton?.isEnabled = false
+        }
     }
 
 }

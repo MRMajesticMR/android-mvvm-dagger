@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">app-mvvm-dagger</string>
+    <string name="do_some_action">do some action</string>
 </resources>

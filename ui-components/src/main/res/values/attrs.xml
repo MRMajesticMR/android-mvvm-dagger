@@ -5,6 +5,8 @@
 
     <!-- Text colors -->
     <attr name="app_text_color_regular" format="reference|color" />
+    <attr name="app_accent_button_text_color_regular_enabled" format="reference|color" />
+    <attr name="app_accent_button_text_color_regular_disabled" format="reference|color" />
 
     <!-- Fonts -->
     <attr name="app_font_regular" format="reference" />

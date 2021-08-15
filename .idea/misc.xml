@@ -11,6 +11,14 @@
         <entry key="app/src/main/res/layout/f_fact_details.xml" value="0.35" />
         <entry key="app/src/main/res/layout/f_facts_list.xml" value="0.35" />
         <entry key="app/src/main/res/layout/i_cat_fact.xml" value="0.35" />
+        <entry key="ui-components/src/main/res/drawable/bg_button_accent.xml" value="0.38358974358974357" />
+        <entry key="ui-components/src/main/res/drawable/bg_button_primary.xml" value="0.38358974358974357" />
+        <entry key="ui-components/src/main/res/drawable/bg_button_primary_disabled.xml" value="0.38358974358974357" />
+        <entry key="ui-components/src/main/res/drawable/bg_button_primary_enabled.xml" value="0.38358974358974357" />
+        <entry key="ui-components/src/main/res/drawable/rectangle_fill_accent_radius_8dp.xml" value="0.38358974358974357" />
+        <entry key="ui-components/src/main/res/drawable/rectangle_fill_gray_500_radius_8dp.xml" value="0.38358974358974357" />
+        <entry key="ui-components/src/main/res/drawable/rectangle_fill_primary_radius_8dp.xml" value="0.38358974358974357" />
+        <entry key="ui-components/src/main/res/drawable/rectangle_fill_purple_500_radius_8dp.xml" value="0.38358974358974357" />
       </map>
     </option>
   </component>
