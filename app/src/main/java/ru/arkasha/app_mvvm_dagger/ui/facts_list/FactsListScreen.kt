@@ -2,8 +2,10 @@ package ru.arkasha.app_mvvm_dagger.ui.facts_list
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import dagger.Lazy
 import ru.arkasha.app_mvvm_dagger.R
 import ru.arkasha.app_mvvm_dagger.appComponent
 import ru.arkasha.app_mvvm_dagger.base.recycler_view.tuneVertical
@@ -14,7 +16,9 @@ import javax.inject.Inject
 class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f_facts_list) {
 
     @Inject
-    lateinit var viewModel: ViewModel
+    internal lateinit var viewModelFactory: Lazy<ViewModel.Factory>
+
+    private val viewModel: ViewModel by viewModels { viewModelFactory.get() }
 
     private val factsRecyclerViewAdapter by lazy {
         FactsRecyclerViewAdapter().apply {
