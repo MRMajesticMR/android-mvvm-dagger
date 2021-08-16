@@ -8,29 +8,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/f_fact_details.xml" value="0.35" />
-        <entry key="app/src/main/res/layout/f_facts_list.xml" value="0.35" />
-        <entry key="app/src/main/res/layout/i_cat_fact.xml" value="0.35" />
-        <entry key="ui-components/src/main/res/drawable/bg_button_accent.xml" value="0.38358974358974357" />
-        <entry key="ui-components/src/main/res/drawable/bg_button_outlined.xml" value="0.38358974358974357" />
-        <entry key="ui-components/src/main/res/drawable/bg_button_outlined_disabled.xml" value="0.38358974358974357" />
-        <entry key="ui-components/src/main/res/drawable/bg_button_outlined_enabled.xml" value="0.38358974358974357" />
-        <entry key="ui-components/src/main/res/drawable/bg_button_primary.xml" value="0.38358974358974357" />
-        <entry key="ui-components/src/main/res/drawable/bg_button_primary_disabled.xml" value="0.38358974358974357" />
-        <entry key="ui-components/src/main/res/drawable/bg_button_primary_enabled.xml" value="0.38358974358974357" />
-        <entry key="ui-components/src/main/res/drawable/rectangle_fill_accent_radius_8dp.xml" value="0.38358974358974357" />
-        <entry key="ui-components/src/main/res/drawable/rectangle_fill_gray_500_radius_8dp.xml" value="0.38358974358974357" />
-        <entry key="ui-components/src/main/res/drawable/rectangle_fill_primary_radius_8dp.xml" value="0.38358974358974357" />
-        <entry key="ui-components/src/main/res/drawable/rectangle_fill_purple_500_radius_8dp.xml" value="0.38358974358974357" />
+        <entry key="..\:/Users/Admin/IdeaProjects/sandbox/android-mvvm-dagger/app/src/main/res/layout/f_fact_details.xml" value="0.3411458333333333" />
+        <entry key="..\:/Users/Admin/IdeaProjects/sandbox/android-mvvm-dagger/app/src/main/res/layout/f_facts_list.xml" value="0.32314814814814813" />
+        <entry key="..\:/Users/Admin/IdeaProjects/sandbox/android-mvvm-dagger/features/something/src/main/res/layout/s_something_details.xml" value="0.35520833333333335" />
       </map>
     </option>
   </component>
-  <component name="EntryPointsManager">
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="dagger.Binds" />
-    </list>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

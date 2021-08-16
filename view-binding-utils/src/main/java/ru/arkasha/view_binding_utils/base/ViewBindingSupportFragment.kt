@@ -13,9 +13,13 @@ abstract class ViewBindingSupportFragment<B: ViewBinding>(@LayoutRes layoutId: I
 
     protected abstract fun bind(view: View): B
 
+    protected open fun initView(view: View, savedInstanceState: Bundle?) = Unit
+
     @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = bind(view)
+
+        initView(view, savedInstanceState)
     }
 
     override fun onDestroyView() {

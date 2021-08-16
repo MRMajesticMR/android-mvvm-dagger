@@ -48,6 +48,12 @@ class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f
 
         appComponent.inject(this)
 
+        binding?.bDoSomething?.setOnClickListener {
+            findNavController().navigate(
+                FactsListScreenDirections.actionFactsListScreenToSomethingDetailsScreen()
+            )
+        }
+
         binding?.rvFacts?.apply {
             tuneVertical(factsRecyclerViewAdapter)
 
@@ -85,19 +91,19 @@ class FactsListScreen : ViewBindingSupportFragment<FFactsListBinding>(R.layout.f
                         ContentState.LOADING -> {
                             binding?.tvLoading?.visibility = View.VISIBLE
                             binding?.rvFacts?.visibility = View.GONE
-                            binding?.tvError?.visibility = View.GONE
+                            binding?.vgError?.visibility = View.GONE
                         }
 
                         ContentState.CONTENT -> {
                             binding?.tvLoading?.visibility = View.GONE
                             binding?.rvFacts?.visibility = View.VISIBLE
-                            binding?.tvError?.visibility = View.GONE
+                            binding?.vgError?.visibility = View.GONE
                         }
 
                         ContentState.ERROR -> {
                             binding?.tvLoading?.visibility = View.GONE
                             binding?.rvFacts?.visibility = View.GONE
-                            binding?.tvError?.visibility = View.VISIBLE
+                            binding?.vgError?.visibility = View.VISIBLE
                         }
                     }
                 }
